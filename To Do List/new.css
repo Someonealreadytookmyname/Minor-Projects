@@ -1,0 +1,222 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background-image: url("sebastian-svenson-LpbyDENbQQg-unsplash.jpg");
+    margin: 0;
+    padding: 0;
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+header {
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+nav {
+    background: transparent;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.add button {
+    background-color: #E9BBA3;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add button:hover {
+    background-color: #e7ad8e   ;
+}
+
+.List {
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.task_bar, .task_bar_static {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    position: relative; /* Ensure relative positioning for absolute positioning of delete buttons */
+    transition: transform 0.3s ease; /* Add transition for task_bar hover */
+    
+}
+
+.task_bar:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.task, .in_task {
+    flex: 1;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgb(107, 107, 107);
+}
+.in_task::placeholder
+{
+    color: lightsteelblue;
+}
+
+.dynamic_priority,
+.dynamic_difficulty {
+    flex: 0 0 auto; /* Fix the width */
+    margin-left: auto; /* Initially position to the right */
+    border: none;
+    font-family: "Quicksand",sans-serif;
+    font-weight: 900;
+
+}
+
+.task_bar:hover .dynamic_priority, .task_bar:hover .dynamic_difficulty {
+    margin-left: 10%; /* Slide to the left on hover */
+    transition: 1s;
+}
+
+.remove {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: 1s;
+    right: 10px;
+}
+
+.task_bar:hover .remove {
+    opacity: 1; /* Show on hover */
+    transition: 1s;
+}
+
+.task_bar:hover .DandP
+{
+    /* position: absolute;
+    right: 12%; */
+    margin-right: 11%;
+    transition: 1s;
+}
+
+.removeTaskBtn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 1s ease;
+}
+
+.removeTaskBtn:hover {
+    background-color: #d32f2f;
+}
+
+.task:hover .dynamic_difficulty {
+    margin-left: 10%;
+}
+
+.task:hover .dynamic_priority {
+    margin-left: 20%;
+}
+.priority
+{
+    margin-left: 20px;
+}
+.dp, .DandP {
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgb(107, 107, 107);
+    transition: 1s;
+}
+
+/* Style for the static first row */
+.task_bar_static {
+    font-weight: bold;
+    background-color: #D9E8E6
+}
+
+.Low, .High, .Medium    /* Select */
+{
+    font-family: "Quickand", sans-serif;
+    font-size: smaller;
+    font-weight: 700;
+}
+
+.Low {
+    color: green;
+}
+
+.Medium {
+    color: #c9912a;
+}
+
+.High {
+    color: #d32f2f;
+}
+
+/* For smaller screens, adjust padding and font size */
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 0.5rem;
+    }
+    header {
+        padding: 0.5rem 0;
+        font-size: 1.5rem;
+    }
+    .List {
+        padding: 0.5rem;
+    }
+    .task_bar {
+        padding: 0.75rem;
+    }
+    .task_bar .task,
+    .task_bar .in_task {
+        font-size: 0.9rem;
+    }
+}
+
+/* For larger screens, adjust layout and font size */
+@media only screen and (min-width: 768px) {
+    .List {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .task_bar {
+        margin-bottom: 1.5rem;
+    }
+    .task_bar .task,
+    .task_bar .in_task {
+        font-size: 1.1rem;
+    }
+}

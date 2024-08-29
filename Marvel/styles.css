@@ -1,0 +1,26 @@
+header {
+    color: #fff;
+    padding: 20px 0;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+}
+
+.symbols img {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px;
+    cursor: pointer;
+}
